@@ -69,10 +69,15 @@
 <!-- END: MainHeader -->
 <!-- BEGIN: HeroSection -->
 <section class="relative bg-white pt-10 pb-16 overflow-hidden">
-<!-- Background Shapes -->
-<div class="absolute top-10 left-10 w-32 h-32 bg-pink-50 rounded-full"></div>
-<div class="absolute -bottom-32 -left-20 w-[500px] h-[500px] bg-yellow-50 rounded-full"></div>
-<div class="absolute -bottom-40 -right-20 w-[800px] h-[800px] bg-yellow-50 rounded-full"></div>
+<!-- Background Shapes (Pastel Pattern extending from text to character) -->
+<div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+  <!-- Text background (Top left to center) -->
+  <div class="absolute -top-20 -left-20 w-[600px] h-[600px] bg-gradient-to-br from-pink-100 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
+  <!-- Character background (Center to right) -->
+  <div class="absolute top-10 right-0 w-[700px] h-[700px] bg-gradient-to-tl from-yellow-100 via-pink-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+  <!-- Bottom connection -->
+  <div class="absolute -bottom-40 left-1/4 w-[800px] h-[500px] bg-gradient-to-t from-pink-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+</div>
 
 <div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
 <div class="w-full md:w-1/2 z-10">
@@ -98,7 +103,10 @@
 </div>
 </div>
 <div class="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 relative z-10">
-  <img src="./character.png" alt="キャラクター" class="w-full max-w-[500px] h-auto object-contain">
+  <!-- Character Specific Pastel Pattern -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] -z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjZmZmMGY1IiBkPSJNMzcuNSwtNjcuOEM1MS42LC02MS45LDY3LjksLTU2LjUsNzguNSwtNDUuNEM4OS4yLC0zNC40LDk0LjQsLTE3LjIsOTEuOCwtMS4yQzg5LjEsMTQuOSw3OC44LDMwLDY4LjMsNDQuM0M1Ny43LDU4LjYsNDYuOCw3Mi4xLDMzLDc5LjZDMTkuMSw4Ny4yLDIsODguOSwtMTIuNCw4NC41Qy0yNi44LDgwLjIsLTQzLjYsNjkuOSwtNTYuOCw1Ny4xQy03MCw0NC4yLC03OS43LDI4LjcsLTgyLjEsMTIuMkMtODQuNCwtNC40LC03OS40LC0yMS45LC03MC4yLC0zNS42Qy02MC45LC00OS40LC00Ny40LC01OS4zLC0zMy43LC02NC44Qy0yMC4xLC03MC40LC0xMCwtNzEuNywzLjIsLTc2LjJDMTYuNCwtODAuOCwzMi43LC04OC42LDM3LjUsLTY3Ljh6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAgMTAwKSIvPjwvc3ZnPg==')] bg-contain bg-center bg-no-repeat opacity-80 scale-125 blur-sm mix-blend-multiply"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] -z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjZmZmYWU2IiBkPSJNNDIuMSwtNjYuN0M1NS40LC02MS44LDY3LjksLTUzLjEsNzcuMSwtNDEuNEM4Ni4yLC0yOS43LDkyLjEsLTE0LjksOTIuMywwLjJDNzkuNCwzMSw2NCw0Ni45LDUwLDU4LjFDMzUuOSw2OS4zLDIzLDc1LjcsOC41LDc4Qy02LjEsODAuMywtMTkuMSw3OC42LC0zMS4yLDczLjRDLTQzLjMsNjguMywtNTQuNiw1OS43LC02My42LDQ4LjVDLTcyLjUsMzcuNCwtNzkuMiwyMy44LC04MS4yLDkuNUMtODMuMywtNC44LC04MC44LC0xOS45LC03My43LC0zMS42Qy02Ni43LC00My4zLC01NSwtNTEuNywtNDEuOSwtNTYuN0MtMjguNywtNjEuNywtMTQuNCwtNjMuNSwwLjYsLTY0LjRDMTUuNSwtNjUuMiwzMSwtNjUuMiw0Mi4xLC02Ni43eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAwIDEwMCkiLz48L3N2Zz4=')] bg-contain bg-center bg-no-repeat opacity-60 scale-100 mix-blend-multiply translate-x-4 -translate-y-4"></div>
+  <img src="./character.png" alt="キャラクター" class="w-full max-w-[500px] h-auto object-contain relative z-10 drop-shadow-md">
 </div>
 </div>
 </section>
