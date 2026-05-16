@@ -46,7 +46,6 @@
 </div>
 <h1 class="text-lg font-bold tracking-tighter"><span class="text-pta-pink">書籍特典</span><span class="text-gray-800">WEBサイト メニュー</span></h1>
 </div>
-<div class="flex items-center gap-6">
 <nav class="flex items-center gap-6 text-sm font-bold text-gray-700">
 <a class="flex items-center gap-1 text-pta-pink border-b-2 border-pta-pink pb-1" href="#">
 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
@@ -65,129 +64,137 @@
 <span>お問い合わせ</span>
 </a>
 </nav>
-<img src="./character.png" alt="キャラクター" class="h-12 w-auto object-contain shrink-0">
-</div>
 </div>
 </header>
 <!-- END: MainHeader -->
 <!-- BEGIN: HeroSection -->
-<section class="relative bg-white pt-10 pb-6 overflow-hidden">
-<div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center">
+<section class="relative bg-white pt-10 pb-16 overflow-hidden">
+<!-- Background Shapes -->
+<div class="absolute top-10 left-10 w-32 h-32 bg-pink-50 rounded-full"></div>
+<div class="absolute -bottom-32 -left-20 w-[500px] h-[500px] bg-yellow-50 rounded-full"></div>
+<div class="absolute -bottom-40 -right-20 w-[800px] h-[800px] bg-yellow-50 rounded-full"></div>
+
+<div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
 <div class="w-full md:w-1/2 z-10">
 <!-- Speech Bubble -->
 <div class="relative inline-block mb-4">
-<div class="border-2 border-pta-red text-pta-red font-bold py-1 px-4 rounded-full text-sm">
+<div class="border-2 border-pta-red text-pta-red font-bold py-1 px-4 rounded-full text-sm bg-white">
             小学校PTAのお仕事に
           </div>
 <div class="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r-2 border-b-2 border-pta-red rotate-45"></div>
 </div>
-<h2 class="text-4xl md:text-5xl font-black leading-tight mb-2">
-<span class="text-pta-blue">AI</span><span class="text-gray-800">で自動化すれば</span><br/>
+<h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">
+<span class="text-pta-pink">AI</span><span class="text-gray-800">で自動化すれば</span><br/>
 <span class="text-pta-pink">ストレスフリー！</span>
 </h2>
-<h3 class="text-2xl font-bold text-gray-800 mb-6">
+<h3 class="text-2xl font-bold text-gray-800 mb-8">
           PTAママの <span class="highlight-yellow">負担を減らす！</span>
 </h3>
-<div class="bg-pink-50 border-2 border-dotted border-pta-pink rounded-xl p-4 max-w-sm mb-8">
-<p class="text-sm leading-relaxed text-gray-700">
+<div class="bg-[#fff9fa] border-2 border-dotted border-pta-pink rounded-xl p-5 max-w-sm mb-8 shadow-sm relative z-20">
+<p class="text-sm leading-relaxed text-gray-800 font-bold text-center">
             このサイトでは、本を読んでくださった方限定の<br/>
-<span class="text-pta-pink font-bold text-base underline">特典コンテンツ</span>をご利用いただけます。
+<span class="text-pta-pink text-base font-black">特典コンテンツ</span>をご利用いただけます。
           </p>
 </div>
+</div>
+<div class="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 relative z-10">
+  <img src="./character.png" alt="キャラクター" class="w-full max-w-[500px] h-auto object-contain">
 </div>
 </div>
 </section>
 <!-- END: HeroSection -->
 <!-- BEGIN: MenuSection -->
-<section class="bg-gray-50 py-12 px-4">
+<section class="bg-[#fff9fa] py-16 px-4">
 <div class="max-w-screen-xl mx-auto">
-<div class="flex items-center justify-center gap-2 mb-10">
-<svg class="h-8 w-8 text-pta-pink" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+<div class="flex items-center justify-center gap-3 mb-12">
+<div class="text-pta-pink">
+<svg class="h-10 w-10" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
-<h2 class="text-2xl font-black text-gray-800 tracking-widest">メニュー一覧</h2>
+</div>
+<h2 class="text-3xl font-black text-gray-800 tracking-widest">メニュー一覧</h2>
 </div>
 <!-- Menu Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <!-- Card 01 -->
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative transition hover:shadow-md cursor-pointer group">
-<div class="absolute top-4 left-4 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-lg">01</div>
+<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">01</div>
 <div class="flex flex-col items-center pt-6">
-<div class="mb-4 text-pta-pink">
-<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="1.5"></path></svg>
+<div class="mb-5 text-pta-pink">
+<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v10a2 2 0 002 2z" stroke-width="1.5"></path></svg>
 </div>
-<h3 class="text-xl font-black mb-3">一斉送信テンプレート集</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-4">すぐに使えるお知らせメールの<br/>テンプレートをダウンロードできます。</p>
+<h3 class="text-xl font-black mb-4 text-gray-800">一斉送信テンプレート集</h3>
+<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">すぐに使えるお知らせメールの<br/>テンプレートをダウンロードできます。</p>
 <div class="w-full flex justify-end">
 <svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
 </div>
 </div>
 <!-- Card 02 -->
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative transition hover:shadow-md cursor-pointer group">
-<div class="absolute top-4 left-4 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-lg">02</div>
+<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">02</div>
 <div class="flex flex-col items-center pt-6">
-<div class="mb-4 text-pta-green">
+<div class="mb-5 text-pta-green">
 <svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="1.5"></path></svg>
 </div>
-<h3 class="text-xl font-black mb-3">作業効率化ツール</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-4">PTAのお仕事を効率化する<br/>便利なツールを利用できます。</p>
+<h3 class="text-xl font-black mb-4 text-gray-800">作業効率化ツール</h3>
+<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">PTAのお仕事を効率化する<br/>便利なツールを利用できます。</p>
 <div class="w-full flex justify-end">
 <svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
 </div>
 </div>
 <!-- Card 03 -->
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative transition hover:shadow-md cursor-pointer group">
-<div class="absolute top-4 left-4 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-lg">03</div>
+<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">03</div>
 <div class="flex flex-col items-center pt-6">
-<div class="mb-4 text-pta-yellow">
+<div class="mb-5 text-pta-yellow">
 <svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-width="1.5"></path></svg>
 </div>
-<h3 class="text-xl font-black mb-3">チェックリスト集</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-4">面倒なお仕事チェックを<br/>ラクにするチェックリストです。</p>
+<h3 class="text-xl font-black mb-4 text-gray-800">チェックリスト集</h3>
+<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">面倒なお仕事チェックを<br/>ラクにするチェックリストです。</p>
 <div class="w-full flex justify-end">
 <svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
 </div>
 </div>
 <!-- Card 04 -->
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative transition hover:shadow-md cursor-pointer group">
-<div class="absolute top-4 left-4 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-lg">04</div>
+<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">04</div>
 <div class="flex flex-col items-center pt-6">
-<div class="mb-4 text-pta-blue">
+<div class="mb-5 text-pta-blue">
 <svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-width="1.5"></path><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="1.5"></path></svg>
 </div>
-<h3 class="text-xl font-black mb-3">活用動画ガイド</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-4">AIツールの使い方や活用方法を<br/>動画でわかりやすく解説します。</p>
+<h3 class="text-xl font-black mb-4 text-gray-800">活用動画ガイド</h3>
+<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">AIツールの使い方や活用方法を<br/>動画でわかりやすく解説します。</p>
 <div class="w-full flex justify-end">
 <svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
 </div>
 </div>
 <!-- Card 05 -->
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative transition hover:shadow-md cursor-pointer group">
-<div class="absolute top-4 left-4 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-lg">05</div>
+<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">05</div>
 <div class="flex flex-col items-center pt-6">
-<div class="mb-4 text-purple-400">
+<div class="mb-5 text-purple-400">
 <svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-width="1.5"></path></svg>
 </div>
-<h3 class="text-xl font-black mb-3">よくある質問Q&amp;A</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-4">よくある質問とその回答を<br/>まとめています。</p>
+<h3 class="text-xl font-black mb-4 text-gray-800">よくある質問Q&amp;A</h3>
+<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">よくある質問とその回答を<br/>まとめています。</p>
 <div class="w-full flex justify-end">
 <svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
 </div>
 </div>
 <!-- Card 06 -->
-<div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 relative transition hover:shadow-md cursor-pointer group">
-<div class="absolute top-4 left-4 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-lg">06</div>
+<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
+<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">06</div>
 <div class="flex flex-col items-center pt-6">
-<div class="mb-4 text-pta-red">
+<div class="mb-5 text-pta-pink">
 <svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-width="1.5"></path></svg>
 </div>
-<h3 class="text-xl font-black mb-3">特典コンテンツ一覧</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-4">書籍購入者限定の<br/>特典コンテンツ一覧です。</p>
+<h3 class="text-xl font-black mb-4 text-gray-800">特典コンテンツ一覧</h3>
+<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">書籍購入者限定の<br/>特典コンテンツ一覧です。</p>
 <div class="w-full flex justify-end">
 <svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </div>
@@ -198,32 +205,33 @@
 </section>
 <!-- END: MenuSection -->
 <!-- BEGIN: InformationSection -->
-<section class="bg-white py-12 px-4">
+<section class="bg-[#fff9fa] py-10 px-4 pb-20">
 <div class="max-w-screen-xl mx-auto">
-<div class="bg-pink-50 rounded-3xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="bg-[#fff0f5] rounded-full p-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm border border-pink-50 max-w-4xl mx-auto">
 <div class="flex items-center gap-6">
-<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center border-2 border-pta-pink">
-<svg class="h-10 w-10 text-pta-pink" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.663 17h4.674a1 1 0 00.922-.617l2.108-4.742A1 1 0 0016.446 10h-2.112l1.108-2.77A1 1 0 0014.502 6H9.498a1 1 0 00-.94 1.23l1.108 2.77H7.554a1 1 0 00-.922 1.383l2.108 4.742a1 1 0 00.923.617z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center border-2 border-pta-pink text-pta-pink shrink-0 shadow-sm">
+<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.674a1 1 0 00.922-.617l2.108-4.742A1 1 0 0016.446 10h-2.112l1.108-2.77A1 1 0 0014.502 6H9.498a1 1 0 00-.94 1.23l1.108 2.77H7.554a1 1 0 00-.922 1.383l2.108 4.742a1 1 0 00.923.617z"></path>
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22a2 2 0 002-2H10a2 2 0 002 2z"></path>
 </svg>
 </div>
 <div>
 <h4 class="text-pta-pink text-xl font-black mb-1">はじめにお読みください</h4>
-<p class="text-gray-700 font-bold">初めての方は、使い方ガイドをご覧ください。</p>
+<p class="text-gray-800 font-bold text-sm md:text-base">初めての方は、使い方ガイドをご覧ください。</p>
 </div>
 </div>
-<a class="bg-pta-pink text-white font-bold px-10 py-4 rounded-xl flex items-center gap-2 transition hover:bg-pta-red shadow-lg active:scale-95" href="#">
+<a class="bg-pta-pink text-white font-bold px-8 py-4 rounded-full flex items-center gap-2 transition hover:bg-pta-red shadow-md hover:shadow-lg active:scale-95 shrink-0" href="#">
           使い方ガイドへ
-          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </a>
 </div>
 </div>
 </section>
 <!-- END: InformationSection -->
 <!-- BEGIN: Footer -->
-<footer class="bg-pink-100 py-6">
+<footer class="bg-[#ffe4f0] py-8">
 <div class="max-w-screen-xl mx-auto px-4 text-center">
-<p class="text-xs text-pta-pink font-bold">© 2024 AIで自動化すればストレスフリー！ All Rights Reserved.</p>
+<p class="text-sm text-pta-pink font-bold">© 2024 AIで自動化すればストレスフリー！ All Rights Reserved.</p>
 </div>
 </footer>
 <!-- END: Footer -->
