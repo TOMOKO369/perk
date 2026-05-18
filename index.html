@@ -1,234 +1,349 @@
 <!DOCTYPE html>
-
-<html lang="ja"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>書籍特典WEBサイト メニュー</title>
-<!-- Tailwind CSS v3 CDN -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'pta-pink': '#ff4d79',
-            'pta-yellow': '#ffeb3b',
-            'pta-blue': '#4285f4',
-            'pta-green': '#34a853',
-            'pta-red': '#ea4335',
-            'bg-soft': '#fff9fa'
-          }
-        }
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "surface-tint": "#ba104a",
+                    "surface-container-lowest": "#ffffff",
+                    "pastel-purple": "#CDB4DB",
+                    "secondary-fixed-dim": "#e8c426",
+                    "surface-bright": "#fbf9f8",
+                    "surface-container-low": "#f6f3f2",
+                    "pastel-blue": "#A2D2FF",
+                    "on-primary-container": "#fffbff",
+                    "on-secondary-fixed": "#221b00",
+                    "tertiary-fixed": "#96f89f",
+                    "outline": "#8e6f73",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#f0eded",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1b1c1c",
+                    "secondary-container": "#fdd73b",
+                    "inverse-primary": "#ffb2bd",
+                    "on-tertiary-fixed": "#002107",
+                    "inverse-on-surface": "#f3f0f0",
+                    "secondary-fixed": "#ffe173",
+                    "on-primary-fixed-variant": "#900036",
+                    "inverse-surface": "#303030",
+                    "tertiary-container": "#21863b",
+                    "on-background": "#1b1c1c",
+                    "surface-container-highest": "#e4e2e1",
+                    "background": "#fbf9f8",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#f7fff2",
+                    "on-secondary-container": "#715d00",
+                    "on-tertiary-fixed-variant": "#00531d",
+                    "tertiary-fixed-dim": "#7bdb85",
+                    "surface-dim": "#dcd9d9",
+                    "on-primary-fixed": "#400013",
+                    "primary-container": "#d92f5f",
+                    "surface-soft": "#FFF9FA",
+                    "primary-fixed": "#ffd9dd",
+                    "surface-variant": "#e4e2e1",
+                    "status-error": "#EA4335",
+                    "surface": "#fbf9f8",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#ffb2bd",
+                    "on-surface-variant": "#5a4043",
+                    "tertiary": "#006b28",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed-variant": "#554500",
+                    "secondary": "#705d00",
+                    "primary": "#b60b47",
+                    "surface-container-high": "#eae8e7",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#e2bec1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "40px",
+                    "container-max": "1200px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+                    "label-md": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"],
+                    "label-sm": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"],
+                    "body-lg": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"],
+                    "headline-md": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+                    "headline-lg": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+                    "headline-xl": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
+                    "body-md": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
       }
-    }
-  </script>
-<style data-purpose="custom-typography">
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
-    .highlight-yellow {
-      background: linear-gradient(transparent 60%, #fff176 60%);
-    }
-  </style>
+    </script>
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .header-accent {
+            position: relative;
+        }
+        .header-accent::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            border-radius: 4px 4px 0 0;
+        }
+        .header-accent-pink::before { background-color: #FF4D79; }
+        .header-accent-yellow::before { background-color: #ffe173; }
+        .header-accent-green::before { background-color: #7bdb85; }
+        
+        .soft-glow {
+            box-shadow: 0 20px 40px -10px rgba(186,16,74,0.08);
+        }
+        .squishy:hover {
+            transform: scale(0.98);
+            transition: transform 0.2s ease-in-out;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+    </style>
 </head>
-<body class="min-h-screen">
-<!-- BEGIN: MainHeader -->
-<header class="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
-<div class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between overflow-x-auto whitespace-nowrap gap-4">
-<div class="flex items-center gap-2 shrink-0">
-<div class="text-pta-pink">
-<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<body class="bg-surface-soft text-on-surface font-body-md selection:bg-primary-fixed">
+<!-- TopAppBar Navigation -->
+<header class="w-full top-0 sticky z-50 bg-surface-soft dark:bg-surface-dim shadow-[0_10px_30px_-15px_rgba(186,16,74,0.08)]">
+<div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-20">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden text-white">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
 </div>
-<h1 class="text-lg font-bold tracking-tighter"><span class="text-pta-pink">書籍特典</span><span class="text-gray-800">WEBサイト メニュー</span></h1>
+<h1 class="text-lg font-bold tracking-tighter whitespace-nowrap"><span class="text-[#ff4d79]">書籍特典</span><span class="text-gray-800">WEBサイト メニュー</span></h1>
 </div>
-<nav class="flex items-center gap-6 text-sm font-bold text-gray-700">
-<a class="flex items-center gap-1 text-pta-pink border-b-2 border-pta-pink pb-1" href="#">
-<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-<span>ホーム</span>
-</a>
-<a class="flex items-center gap-1 pb-1 hover:text-pta-pink transition" href="#">
-<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>使い方ガイド</span>
-</a>
-<a class="flex items-center gap-1 pb-1 hover:text-pta-pink transition" href="#">
-<svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>よくある質問</span>
-</a>
-<a class="flex items-center gap-1 pb-1 hover:text-pta-pink transition group" href="#">
-<svg class="h-5 w-5 text-pta-pink group-hover:text-pta-pink" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-<span>お問い合わせ</span>
-</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary" href="#">ホーム</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-transform duration-200 hover:scale-98" href="#">使い方ガイド</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-transform duration-200 hover:scale-98" href="#">よくある質問</a>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:scale-98 transition-transform">お問い合わせ</button>
 </nav>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
 </div>
 </header>
-<!-- END: MainHeader -->
-<!-- BEGIN: HeroSection -->
-<section class="relative bg-white pt-10 pb-16 overflow-hidden">
-<!-- Background Shapes (Pastel Pattern extending from text to character) -->
-<div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-  <!-- Text background (Top left to center) -->
-  <div class="absolute -top-20 -left-20 w-[600px] h-[600px] bg-gradient-to-br from-pink-100 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-60"></div>
-  <!-- Character background (Center to right) -->
-  <div class="absolute top-10 right-0 w-[700px] h-[700px] bg-gradient-to-tl from-yellow-100 via-pink-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
-  <!-- Bottom connection -->
-  <div class="absolute -bottom-40 left-1/4 w-[800px] h-[500px] bg-gradient-to-t from-pink-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-24">
+<!-- Hero Section with Overlapping Circles -->
+<section class="relative py-12 md:py-24 overflow-hidden rounded-3xl mt-6">
+<!-- Background Decorative Circles -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 flex justify-center items-center pointer-events-none">
+<div class="absolute w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary-fixed opacity-40 rounded-full -translate-x-1/4 translate-y-1/4 blur-3xl"></div>
+<div class="absolute w-[250px] h-[250px] md:w-[500px] md:h-[500px] bg-pastel-blue opacity-30 rounded-full translate-x-1/3 -translate-y-1/4 blur-3xl"></div>
+<div class="absolute w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-secondary-fixed opacity-40 rounded-full -translate-x-1/2 -translate-y-1/3 blur-2xl"></div>
+<!-- Visualizing the overlapping pastel circles as requested -->
+<div class="absolute w-64 h-64 bg-primary-fixed/20 rounded-full top-10 right-20"></div>
+<div class="absolute w-48 h-48 bg-tertiary-fixed-dim/20 rounded-full bottom-10 left-10"></div>
+<div class="absolute w-32 h-32 bg-secondary-fixed/20 rounded-full top-40 left-1/4"></div>
 </div>
-
-<div class="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center relative z-10">
-<div class="w-full md:w-1/2 z-10">
-<!-- Speech Bubble -->
-<div class="relative inline-block mb-4">
-<div class="border-2 border-pta-red text-pta-red font-bold py-1 px-4 rounded-full text-sm bg-white">
-            小学校PTAのお仕事に
-          </div>
-<div class="absolute -bottom-2 left-8 w-4 h-4 bg-white border-r-2 border-b-2 border-pta-red rotate-45"></div>
-</div>
-<h2 class="text-4xl md:text-5xl font-black leading-tight mb-4">
-<span class="text-pta-pink">AI</span><span class="text-gray-800">で自動化すれば</span><br/>
-<span class="text-pta-pink">ストレスフリー！</span>
-</h2>
-<h3 class="text-2xl font-bold text-gray-800 mb-8">
-          PTAママの <span class="highlight-yellow">負担を減らす！</span>
-</h3>
-<div class="bg-[#fff9fa] border-2 border-dotted border-pta-pink rounded-xl p-5 max-w-sm mb-8 shadow-sm relative z-20">
-<p class="text-sm leading-relaxed text-gray-800 font-bold text-center">
-            このサイトでは、本を読んでくださった方限定の<br/>
-<span class="text-pta-pink text-base font-black">特典コンテンツ</span>をご利用いただけます。
-          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
+<span class="bg-primary-fixed text-on-primary-fixed px-4 py-1 rounded-full text-label-sm font-label-sm mb-6 inline-block">小学校PTAのお仕事に</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-6 leading-tight">
+                        AIで自動化すれば<br>ストレスフリー！
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4 font-bold text-lg">
+                        PTAママの負担を減らす！
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                        このサイトでは、本を読んでくださった方限定の特典コンテンツをご利用いただけます。
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-lg squishy soft-glow">
+                            使い方ガイドへ
+                        </button>
+<button class="border-2 border-outline-variant text-on-surface-variant px-8 py-4 rounded-xl font-label-md text-lg squishy bg-white/50 backdrop-blur-sm">
+                            よくある質問
+                        </button>
 </div>
 </div>
-<div class="w-full md:w-1/2 flex justify-center mt-10 md:mt-0 relative z-10">
-  <!-- Character Specific Pastel Pattern -->
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] -z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjZmZmMGY1IiBkPSJNMzcuNSwtNjcuOEM1MS42LC02MS45LDY3LjksLTU2LjUsNzguNSwtNDUuNEM4OS4yLC0zNC40LDk0LjQsLTE3LjIsOTEuOCwtMS4yQzg5LjEsMTQuOSw3OC44LDMwLDY4LjMsNDQuM0M1Ny43LDU4LjYsNDYuOCw3Mi4xLDMzLDc5LjZDMTkuMSw4Ny4yLDIsODguOSwtMTIuNCw4NC41Qy0yNi44LDgwLjIsLTQzLjYsNjkuOSwtNTYuOCw1Ny4xQy03MCw0NC4yLC03OS43LDI4LjcsLTgyLjEsMTIuMkMtODQuNCwtNC40LC03OS40LC0yMS45LC03MC4yLC0zNS42Qy02MC45LC00OS40LC00Ny40LC01OS4zLC0zMy43LC02NC44Qy0yMC4xLC03MC40LC0xMCwtNzEuNywzLjIsLTc2LjJDMTYuNCwtODAuOCwzMi43LC04OC42LDM3LjUsLTY3Ljh6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAgMTAwKSIvPjwvc3ZnPg==')] bg-contain bg-center bg-no-repeat opacity-80 scale-125 blur-sm mix-blend-multiply"></div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] -z-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48cGF0aCBmaWxsPSIjZmZmYWU2IiBkPSJNNDIuMSwtNjYuN0M1NS40LC02MS44LDY3LjksLTUzLjEsNzcuMSwtNDEuNEM4Ni4yLC0yOS43LDkyLjEsLTE0LjksOTIuMywwLjJDNzkuNCwzMSw2NCw0Ni45LDUwLDU4LjFDMzUuOSw2OS4zLDIzLDc1LjcsOC41LDc4Qy02LjEsODAuMywtMTkuMSw3OC42LC0zMS4yLDczLjRDLTQzLjMsNjguMywtNTQuNiw1OS43LC02My42LDQ4LjVDLTcyLjUsMzcuNCwtNzkuMiwyMy44LC04MS4yLDkuNUMtODMuMywtNC44LC04MC44LC0xOS45LC03My43LC0zMS42Qy02Ni43LC00My4zLC01NSwtNTEuNywtNDEuOSwtNTYuN0MtMjguNywtNjEuNywtMTQuNCwtNjMuNSwwLjYsLTY0LjRDMTUuNSwtNjUuMiwzMSwtNjUuMiw0Mi4xLC02Ni43eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAwIDEwMCkiLz48L3N2Zz4=')] bg-contain bg-center bg-no-repeat opacity-60 scale-100 mix-blend-multiply translate-x-4 -translate-y-4"></div>
-  <img src="./character.png" alt="キャラクター" class="w-full max-w-[500px] h-auto object-contain relative z-10 drop-shadow-md">
-</div>
-</div>
-</section>
-<!-- END: HeroSection -->
-<!-- BEGIN: MenuSection -->
-<section class="bg-[#fff9fa] py-16 px-4">
-<div class="max-w-screen-xl mx-auto">
-<div class="flex items-center justify-center gap-3 mb-12">
-<div class="text-pta-pink">
-<svg class="h-10 w-10" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-<h2 class="text-3xl font-black text-gray-800 tracking-widest">メニュー一覧</h2>
-</div>
-<!-- Menu Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Card 01 -->
-<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
-<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">01</div>
-<div class="flex flex-col items-center pt-6">
-<div class="mb-5 text-pta-pink">
-<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
-</div>
-<h3 class="text-xl font-black mb-4 text-gray-800">一斉送信テンプレート集</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">すぐに使えるお知らせメールの<br/>テンプレートをダウンロードできます。</p>
-<div class="w-full flex justify-end">
-<svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-</div>
-</div>
-<!-- Card 02 -->
-<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
-<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">02</div>
-<div class="flex flex-col items-center pt-6">
-<div class="mb-5 text-pta-green">
-<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-width="1.5"></path></svg>
-</div>
-<h3 class="text-xl font-black mb-4 text-gray-800">作業効率化ツール</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">PTAのお仕事を効率化する<br/>便利なツールを利用できます。</p>
-<div class="w-full flex justify-end">
-<svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-</div>
-</div>
-<!-- Card 03 -->
-<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
-<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">03</div>
-<div class="flex flex-col items-center pt-6">
-<div class="mb-5 text-pta-yellow">
-<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" stroke-width="1.5"></path></svg>
-</div>
-<h3 class="text-xl font-black mb-4 text-gray-800">チェックリスト集</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">面倒なお仕事チェックを<br/>ラクにするチェックリストです。</p>
-<div class="w-full flex justify-end">
-<svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-</div>
-</div>
-<!-- Card 04 -->
-<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
-<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">04</div>
-<div class="flex flex-col items-center pt-6">
-<div class="mb-5 text-pta-blue">
-<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-width="1.5"></path><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="1.5"></path></svg>
-</div>
-<h3 class="text-xl font-black mb-4 text-gray-800">活用動画ガイド</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">AIツールの使い方や活用方法を<br/>動画でわかりやすく解説します。</p>
-<div class="w-full flex justify-end">
-<svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-</div>
-</div>
-<!-- Card 05 -->
-<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
-<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">05</div>
-<div class="flex flex-col items-center pt-6">
-<div class="mb-5 text-purple-400">
-<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" stroke-width="1.5"></path></svg>
-</div>
-<h3 class="text-xl font-black mb-4 text-gray-800">よくある質問Q&amp;A</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">よくある質問とその回答を<br/>まとめています。</p>
-<div class="w-full flex justify-end">
-<svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-</div>
-</div>
-<!-- Card 06 -->
-<div class="bg-white rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-pink-50 relative transition hover:-translate-y-1 hover:shadow-lg cursor-pointer group">
-<div class="absolute top-5 left-5 w-10 h-10 bg-pta-pink text-white flex items-center justify-center rounded-full font-bold text-xl shadow-sm">06</div>
-<div class="flex flex-col items-center pt-6">
-<div class="mb-5 text-pta-pink">
-<svg class="h-16 w-16" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-width="1.5"></path></svg>
-</div>
-<h3 class="text-xl font-black mb-4 text-gray-800">特典コンテンツ一覧</h3>
-<p class="text-sm text-gray-600 text-center leading-relaxed mb-6 font-bold">書籍購入者限定の<br/>特典コンテンツ一覧です。</p>
-<div class="w-full flex justify-end">
-<svg class="h-6 w-6 text-pta-pink transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-</div>
-</div>
+<div class="order-1 md:order-2 flex justify-center relative">
+<div class="relative w-64 h-64 md:w-96 md:h-96">
+<img alt="キャラクター" class="w-full h-full object-contain relative z-10 drop-shadow-2xl" src="./character.png">
 </div>
 </div>
 </div>
 </section>
-<!-- END: MenuSection -->
-<!-- BEGIN: InformationSection -->
-<section class="bg-[#fff9fa] py-10 px-4 pb-20">
-<div class="max-w-screen-xl mx-auto">
-<div class="bg-[#fff0f5] rounded-full p-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm border border-pink-50 max-w-4xl mx-auto">
-<div class="flex items-center gap-6">
-<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center border-2 border-pta-pink text-pta-pink shrink-0 shadow-sm">
-<svg class="h-8 w-8" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.674a1 1 0 00.922-.617l2.108-4.742A1 1 0 0016.446 10h-2.112l1.108-2.77A1 1 0 0014.502 6H9.498a1 1 0 00-.94 1.23l1.108 2.77H7.554a1 1 0 00-.922 1.383l2.108 4.742a1 1 0 00.923.617z"></path>
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22a2 2 0 002-2H10a2 2 0 002 2z"></path>
-</svg>
-</div>
+<!-- Feature Bento Grid -->
+<section class="mt-20">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12">
 <div>
-<h4 class="text-pta-pink text-xl font-black mb-1">はじめにお読みください</h4>
-<p class="text-gray-800 font-bold text-sm md:text-base">初めての方は、使い方ガイドをご覧ください。</p>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">メニュー一覧</h3>
 </div>
 </div>
-<a class="bg-pta-pink text-white font-bold px-8 py-4 rounded-full flex items-center gap-2 transition hover:bg-pta-red shadow-md hover:shadow-lg active:scale-95 shrink-0" href="#">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- 01 Template -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 header-accent header-accent-pink hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline-variant">01</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">一斉送信テンプレート集</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        すぐに使えるお知らせメールのテンプレートをダウンロードできます。
+                    </p>
+</div>
+<!-- 02 Tools -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 header-accent header-accent-yellow hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">build</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline-variant">02</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">作業効率化ツール</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        PTAのお仕事を効率化する便利なツールを利用できます。
+                    </p>
+</div>
+<!-- 03 Checklist -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 header-accent header-accent-green hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">fact_check</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline-variant">03</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">チェックリスト集</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        面倒なお仕事チェックをラクにするチェックリストです。
+                    </p>
+</div>
+<!-- 04 Video Guide -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 header-accent header-accent-pink hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">smart_display</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline-variant">04</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">活用動画ガイド</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        AIツールの使い方や活用方法を動画でわかりやすく解説します。
+                    </p>
+</div>
+<!-- 05 FAQ -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 header-accent header-accent-yellow hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">help_center</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline-variant">05</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">よくある質問Q&amp;A</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        よくある質問とその回答をまとめています。
+                    </p>
+</div>
+<!-- 06 Perks -->
+<div class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 header-accent header-accent-green hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+<div class="flex justify-between items-start mb-6">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed-dim flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant">card_giftcard</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline-variant">06</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-3">特典コンテンツ一覧</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        書籍購入者限定の特典コンテンツ一覧です。
+                    </p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-20 bg-surface-container-low rounded-3xl p-12 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed opacity-20 -rotate-12 translate-x-8 -translate-y-8 rounded-2xl"></div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 relative z-10">はじめにお読みください</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-10 max-w-2xl mx-auto relative z-10">
+                初めての方は、使い方ガイドをご覧ください。
+            </p>
+<button class="bg-primary text-on-primary px-12 py-4 rounded-xl font-headline-md squishy soft-glow relative z-10">
+                使い方ガイドへ
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="mb-8 md:mb-0 text-center md:text-left">
+<h2 class="font-headline-md text-headline-md font-bold text-primary mb-2">AIで自動化すれば<br class="md:hidden">ストレスフリー！</h2>
+<p class="text-on-surface-variant font-body-md">書籍特典WEBサイト メニュー</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">ホーム</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">使い方ガイド</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">よくある質問</a>
+<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">お問い合わせ</a>
+</div>
+<div class="text-on-surface-variant font-label-sm">
+                © 2024 AIで自動化すればストレスフリー！ All Rights Reserved.
+            </div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation Shell (As per mandate) -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 bg-white shadow-[0_-5px_20px_rgba(0,0,0,0.05)] px-6 py-4 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-bold">ホーム</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">auto_fix</span>
+<span class="text-[10px]">使い方ガイド</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">library_books</span>
+<span class="text-[10px]">よくある質問</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px]">お問い合わせ</span>
+</div>
+</div>
+</body>
+</html>-bold px-8 py-4 rounded-full flex items-center gap-2 transition hover:bg-pta-red shadow-md hover:shadow-lg active:scale-95 shrink-0" href="#">
           使い方ガイドへ
           <svg class="h-5 w-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
 </a>
