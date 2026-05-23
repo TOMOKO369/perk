@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAS作り方ガイド｜ぐーたらママでもできた！PTA自動化 特設サイト</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #4285F4;
+  --red: #EA4335;
+  --yellow: #FBBC05;
+  --green: #34A853;
+  --pink: #FF6B9D;
+  --dark: #1a1a1a;
+  --gray: #555;
+  --light: #f8f9fa;
+  --white: #ffffff;
+  --code-bg: #1e1e2e;
+  --code-fg: #cdd6f4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--dark);
+  background: #f0f4f8;
+  line-height: 1.7;
+}
+
+/* ヘッダー */
+header {
+  background: var(--white);
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(to right, var(--blue), var(--red), var(--yellow), var(--green)) 1;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--dark);
+}
+
+.site-title span { color: var(--pink); }
+
+nav { display: flex; gap: 8px; flex-wrap: wrap; }
+
+nav a {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+nav a:nth-child(1) { background: #e8f0fe; color: var(--blue); border-color: var(--blue); }
+nav a:nth-child(2) { background: #fce8e6; color: var(--red); border-color: var(--red); }
+nav a:nth-child(3) { background: #e6f4ea; color: var(--green); border-color: var(--green); }
+nav a:nth-child(4) { background: #fff8e6; color: #856400; border-color: var(--yellow); }
+nav a:hover { opacity: 0.75; transform: translateY(-1px); }
+
+/* ヒーロー */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--white);
+  padding: 60px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(to right, var(--blue), var(--red), var(--yellow), var(--green));
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--pink);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+  letter-spacing: 0.08em;
+}
+
+.hero h1 {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: clamp(24px, 5vw, 40px);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+.hero h1 .accent { color: var(--pink); }
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--gray);
+  margin-bottom: 28px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chapter-nav {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.chapter-nav a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  border: 2.5px solid;
+  transition: all 0.2s;
+  box-shadow: 3px 3px 0;
+}
+
+.chapter-nav a:nth-child(1) { background: #e8f0fe; color: var(--blue); border-color: var(--blue); box-shadow-color: var(--blue); box-shadow: 3px 3px 0 var(--blue); }
+.chapter-nav a:nth-child(2) { background: #fce8e6; color: var(--red); border-color: var(--red); box-shadow: 3px 3px 0 var(--red); }
+.chapter-nav a:nth-child(3) { background: #e6f4ea; color: var(--green); border-color: var(--green); box-shadow: 3px 3px 0 var(--green); }
+.chapter-nav a:hover { transform: translate(-1px, -1px); }
+
+/* メイン */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* セクション */
+.section {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.section-header {
+  padding: 28px 32px 24px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.section-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  border: 2.5px solid;
+}
+
+.s0 .section-icon { background: #e8f0fe; border-color: var(--blue); }
+.s1 .section-icon { background: #fce8e6; border-color: var(--red); }
+.s2 .section-icon { background: #e6f4ea; border-color: var(--green); }
+
+.section-meta {}
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.s0 .section-label { color: var(--blue); }
+.s1 .section-label { color: var(--red); }
+.s2 .section-label { color: var(--green); }
+
+.section-title {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--dark);
+}
+
+.section-desc {
+  font-size: 13px;
+  color: var(--gray);
+  margin-top: 6px;
+}
+
+.section-body { padding: 28px 32px; }
+
+/* ステップ */
+.steps { display: flex; flex-direction: column; gap: 24px; }
+
+.step {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 900;
+  flex-shrink: 0;
+  border: 2.5px solid;
+  color: white;
+  margin-top: 2px;
+}
+
+.s0 .step-num { background: var(--blue); border-color: var(--blue); }
+.s1 .step-num { background: var(--red); border-color: var(--red); }
+.s2 .step-num { background: var(--green); border-color: var(--green); }
+
+.step-content {}
+.step-title {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+.step-desc {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* コードブロック */
+.code-block {
+  background: var(--code-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.code-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.code-lang {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-family: monospace;
+  letter-spacing: 0.05em;
+}
+
+.copy-btn {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: transparent;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.copy-btn:hover { background: rgba(255,255,255,0.1); color: white; }
+.copy-btn.copied { color: var(--green); border-color: var(--green); }
+
+pre {
+  padding: 16px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--code-fg);
+}
+
+.kw { color: #cba6f7; }
+.fn { color: #89b4fa; }
+.str { color: #a6e3a1; }
+.cm { color: #6c7086; font-style: italic; }
+.nm { color: #fab387; }
+
+/* プロンプトボックス */
+.prompt-box {
+  background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.prompt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.prompt-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--yellow);
+  letter-spacing: 0.08em;
+}
+
+.prompt-text {
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #cdd6f4;
+  white-space: pre-wrap;
+}
+
+/* ヒントボックス */
+.hint {
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 10px 0;
+  font-size: 13px;
+  line-height: 1.7;
+  align-items: flex-start;
+}
+
+.hint-info { background: #e8f0fe; color: #1a47ab; }
+.hint-warn { background: #fff8e6; color: #856400; }
+.hint-ok { background: #e6f4ea; color: #1a6b3a; }
+
+.hint-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+/* トリガー設定表 */
+.setting-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 10px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.setting-table th {
+  background: var(--light);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--gray);
+  border-bottom: 2px solid #eee;
+}
+
+.setting-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.setting-table tr:last-child td { border-bottom: none; }
+
+.setting-table .val {
+  font-weight: 700;
+  color: var(--dark);
+}
+
+/* フロー図 */
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 16px 0;
+}
+
+.flow-item {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  border: 2.5px solid;
+  box-shadow: 3px 3px 0;
+}
+
+.flow-item.blue { background: #e8f0fe; border-color: var(--blue); box-shadow: 3px 3px 0 var(--blue); color: #1a47ab; }
+.flow-item.red { background: #fce8e6; border-color: var(--red); box-shadow: 3px 3px 0 var(--red); color: #a50e0e; }
+.flow-item.yellow { background: #fff8e6; border-color: var(--yellow); box-shadow: 3px 3px 0 var(--yellow); color: #856400; }
+.flow-item.green { background: #e6f4ea; border-color: var(--green); box-shadow: 3px 3px 0 var(--green); color: #1a6b3a; }
+
+.flow-arrow { font-size: 22px; color: #aaa; line-height: 1; }
+
+/* 区切り */
+.divider { border: none; border-top: 1px solid #eee; margin: 24px 0; }
+
+/* フッター */
+footer {
+  background: var(--dark);
+  color: rgba(255,255,255,0.6);
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 12px;
+  line-height: 2;
+}
+
+footer strong { color: white; }
+
+.google-bar {
+  height: 4px;
+  background: linear-gradient(to right, var(--blue) 25%, var(--red) 25% 50%, var(--yellow) 50% 75%, var(--green) 75%);
+}
+
+.s3 .section-label { color: #856400; }
+.s3 .step-num { background: var(--yellow); border-color: var(--yellow); color: #333; }
+
+
+  .section-header { flex-direction: column; padding: 20px; }
+  .section-body { padding: 20px; }
+  .step { flex-direction: column; }
+  .step-num { width: 28px; height: 28px; font-size: 13px; }
+  .chapter-nav { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-title">📖 <span>ぐーたらママでもできた！</span>PTA自動化 特設サイト</div>
+    <nav>
+      <a href="#chapter0">第0章</a>
+      <a href="#chapter1">第1章</a>
+      <a href="#chapter2">第2章</a>
+      <a href="#chapter3">第3章</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-badge">📚 書籍「ぐーたらママでもできた！PTA自動化」無料特典</div>
+  <h1>GASの<span class="accent">作り方ガイド</span></h1>
+  <p class="hero-sub">コードの意味はわからなくて大丈夫。chatGPTにコピペして、GASに貼るだけ。動画と手順で一緒に進めましょう！</p>
+  <div class="chapter-nav">
+    <a href="#chapter0">📘 第0章<br>GASの基本操作</a>
+    <a href="#chapter1">📕 第1章<br>自動返信メール</a>
+    <a href="#chapter2">📗 第2章<br>在庫管理・自動発注</a>
+    <a href="#chapter3" style="background:#fff8e6;color:#856400;border-color:var(--yellow);box-shadow:3px 3px 0 var(--yellow);">📙 第3章<br>エラー対処・応用</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- 第0章 -->
+  <section class="section s0" id="chapter0">
+    <div class="section-header">
+      <div class="section-icon">📘</div>
+      <div class="section-meta">
+        <div class="section-label">Chapter 0</div>
+        <div class="section-title">GASの基本操作<br>画面の見方と動かし方</div>
+        <div class="section-desc">GASエディタを開いて、コードを貼って、▶を押すまでの手順です。</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="flow">
+        <div class="flow-item blue">💬 chatGPTに日本語で頼む</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item yellow">📋 コードをコピーする</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item red">📝 GASに貼り付ける</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item green">▶ を押す → 自動化完了！🎉</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Googleスプレッドシートを開く</div>
+            <div class="step-desc">Googleドライブから新規スプレッドシートを作成するか、既存のスプレッドシートを開いてください。</div>
+            <div class="hint hint-info"><div class="hint-icon">💡</div><div>Googleアカウントさえあればどのパソコン・スマホでも無料で使えます。インストール不要です。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">GASエディタを開く</div>
+            <div class="step-desc">スプレッドシートの上のメニューから「拡張機能」→「Apps Script」をクリックします。</div>
+            <div class="hint hint-warn"><div class="hint-icon">⚠️</div><div>「Apps Script」が見つからない場合は「拡張機能」メニューを確認してください。スプレッドシートを開いた状態でないと表示されません。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">chatGPTにコードを作ってもらう</div>
+            <div class="step-desc">以下のプロンプトをchatGPTにそのままコピペして送ってください。</div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">📋 コピペ用プロンプト</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p0')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p0">○○したい。GASのコードを書いてください。エラーが起きないように丁寧に書いてください。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">コードをGASに貼り付ける</div>
+            <div class="step-desc">GASエディタの中の文字を全部消してから、chatGPTのコードを貼り付けます。</div>
+            <div class="hint hint-warn"><div class="hint-icon">⚠️</div><div>最初から書いてある「function myFunction() { }」は全部消してから貼ってください。残っているとエラーの原因になります。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">保存して▶を押す</div>
+            <div class="step-desc">フロッピーアイコン（保存）を押してから、▶（実行）ボタンを押します。</div>
+            <div class="hint hint-info"><div class="hint-icon">💡</div><div>はじめて押したとき「承認が必要です」という画面が出ます。「権限を確認」→「許可」を押せばOKです。怖くないです！</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="step-title">エラーが出たときの対処法</div>
+            <div class="step-desc">赤い文字でエラーが出たら、そのエラー文をchatGPTにそのままコピペします。</div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">🔧 エラー対処プロンプト</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p0e')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p0e">以下のエラーが出ました。原因と修正したコードを教えてください。
+
+（ここにエラーメッセージをそのまま貼る）</div>
+            </div>
+            <div class="hint hint-ok"><div class="hint-icon">✅</div><div>エラーはバグじゃなくて「ここを直して」というメッセージです。chatGPTに貼ればほぼ100%解決してくれます。</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 第1章 -->
+  <section class="section s1" id="chapter1">
+    <div class="section-header">
+      <div class="section-icon">📕</div>
+      <div class="section-meta">
+        <div class="section-label">Chapter 1</div>
+        <div class="section-title">Googleフォーム＋GAS<br>自動返信メールの作り方</div>
+        <div class="section-desc">フォームに入力されたら、自動で「ありがとうございます」メールを送る仕組みを作ります。</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="flow">
+        <div class="flow-item blue">📱 参加者がフォームに入力・送信</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item yellow">📊 スプレッドシートに自動記録</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item red">⚙️ GASが「送信された！」と気づく</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item green">✉️ 自動返信メール送信！</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Googleフォームを作る</div>
+            <div class="step-desc">Googleドライブで「新規作成」→「Googleフォーム」を選んでフォームを作ります。</div>
+            <div class="hint hint-info"><div class="hint-icon">💡</div><div><strong>質問に必ず「メールアドレス」を追加してください。</strong> これがないと自動返信ができません。種類は「メールアドレス」または「短答式」を選んでください。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">スプレッドシートと連動させる</div>
+            <div class="step-desc">フォームの「回答」タブ→緑のスプレッドシートアイコンをクリック→「新しいスプレッドシートを作成」→「作成」。</div>
+            <div class="hint hint-warn"><div class="hint-icon">⚠️</div><div>この手順を飛ばすとGASが動きません。必ずスプレッドシートと連動させてからGASの設定をしてください。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">chatGPTにコードを作ってもらう</div>
+            <div class="step-desc">以下のプロンプトをそのままコピペして送ってください。</div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">📋 コピペ用プロンプト（第1章）</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p1')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p1">Googleフォームに回答が送信されたとき、回答者のメールアドレスに自動でGmailを送るGASのコードを書いてください。
+
+件名：「回答ありがとうございます」
+本文：「この度はご回答いただきありがとうございます。内容を確認のうえ、改めてご連絡させていただきます。今しばらくお待ちくださいませ。」
+
+回答者の名前も取得してメールに入れてください。エラーが起きないようにtry-catchで書いてください。トリガーはフォーム送信時に設定する手順も教えてください。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">スプレッドシートのGASエディタを開く</div>
+            <div class="step-desc">作成されたスプレッドシートを開く→「拡張機能」→「Apps Script」→コードを全部消して貼り付け→保存。</div>
+            <div class="hint hint-warn"><div class="hint-icon">⚠️</div><div><strong>フォームではなくスプレッドシートからGASを開いてください。</strong> フォームから開くとトリガーの設定方法が変わります。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">トリガーを設定する（重要！）</div>
+            <div class="step-desc">コードを貼っただけでは動きません。必ずトリガーを設定してください。</div>
+            <table class="setting-table">
+              <tr><th>項目</th><th>設定値</th></tr>
+              <tr><td>実行する関数</td><td class="val">onFormSubmit</td></tr>
+              <tr><td>イベントのソース</td><td class="val">スプレッドシートから</td></tr>
+              <tr><td>イベントの種類</td><td class="val">フォーム送信時</td></tr>
+            </table>
+            <div class="hint hint-info"><div class="hint-icon">💡</div><div>左サイドバーの時計マーク（⏰）→「トリガーを追加」→上の表の通りに設定→「保存」。Googleアカウントの許可画面が出たら「許可」を押してください。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="step-title">テスト送信して確認する</div>
+            <div class="step-desc">フォームのプレビュー（目のアイコン）を開いて、自分のメールアドレスを入力して送信します。Gmailに「回答ありがとうございます」のメールが届けば成功です！</div>
+            <div class="hint hint-ok"><div class="hint-icon">✅</div><div>メールが届かない場合は迷惑メールフォルダも確認してください。それでも届かない場合はエラー対処プロンプトを使ってください。</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 第2章 -->
+  <section class="section s2" id="chapter2">
+    <div class="section-header">
+      <div class="section-icon">📗</div>
+      <div class="section-meta">
+        <div class="section-label">Chapter 2</div>
+        <div class="section-title">在庫管理＋GAS<br>残数2個以下で自動発注メール</div>
+        <div class="section-desc">スマホから在庫数を入力するだけで、残数が2個以下になったら自動で発注メールが飛ぶ仕組みを作ります。</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="flow">
+        <div class="flow-item blue">📱 スマホのフォームで在庫数を入力</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item yellow">📊 スプレッドシートで残数を自動計算</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item red">⚠️ 残数が2以下になった！</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item green">✉️「発注が必要です」メール自動送信！</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">スプレッドシートを準備する</div>
+            <div class="step-desc">新しいスプレッドシートを作り、以下の列を設定してください。</div>
+            <table class="setting-table">
+              <tr><th>列</th><th>内容</th><th>例</th></tr>
+              <tr><td class="val">A列</td><td>品目名</td><td>コピー用紙</td></tr>
+              <tr><td class="val">B列</td><td>残数</td><td>3</td></tr>
+              <tr><td class="val">C列</td><td>発注先メール</td><td>order@example.com</td></tr>
+            </table>
+            <div class="hint hint-info"><div class="hint-icon">💡</div><div>ダミーデータ（架空の品目名・数字）で練習してください。実際の個人情報や発注先のメールアドレスは本番用に設定してください。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">在庫入力用フォームを作る</div>
+            <div class="step-desc">Googleフォームで「在庫管理フォーム」を作ります。質問はこの3つです。</div>
+            <table class="setting-table">
+              <tr><th>質問</th><th>種類</th></tr>
+              <tr><td>品目名</td><td class="val">短答式</td></tr>
+              <tr><td>入庫数</td><td class="val">短答式（数字）</td></tr>
+              <tr><td>出庫数</td><td class="val">短答式（数字）</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">chatGPTにコードを作ってもらう</div>
+            <div class="step-desc">以下のプロンプトをそのままコピペして送ってください。</div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">📋 コピペ用プロンプト（第2章）</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p2')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p2">Googleスプレッドシートで在庫を管理しています。
+
+スプレッドシートの構成：
+- A列：品目名
+- B列：残数（数字）
+
+B列の残数が2以下になったとき、A列の品目名を件名に入れて「発注が必要です」という内容でGmailを自動送信するGASのコードを書いてください。
+
+また、毎朝8時に自動でチェックするトリガーの設定方法も教えてください。エラーが起きないようにtry-catchで書いてください。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">GASエディタを開いてコードを貼る</div>
+            <div class="step-desc">スプレッドシートの「拡張機能」→「Apps Script」→コードを全部消して貼り付け→保存。</div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">トリガーを設定する（毎朝8時）</div>
+            <div class="step-desc">第1章と違って、こちらは「時間主導型」のトリガーを設定します。</div>
+            <table class="setting-table">
+              <tr><th>項目</th><th>設定値</th></tr>
+              <tr><td>実行する関数</td><td class="val">checkStockAndNotify</td></tr>
+              <tr><td>イベントのソース</td><td class="val">時間主導型</td></tr>
+              <tr><td>時間ベースのトリガー</td><td class="val">日付ベースのタイマー</td></tr>
+              <tr><td>時刻</td><td class="val">午前8時〜9時</td></tr>
+            </table>
+            <div class="hint hint-info"><div class="hint-icon">💡</div><div>毎朝8時に自動でスプレッドシートをチェックしてくれます。誰かが在庫を更新しなくても、残数が少なくなったら自動でメールが飛びます。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">6</div>
+          <div class="step-content">
+            <div class="step-title">テストして確認する</div>
+            <div class="step-desc">スプレッドシートのB列の残数を「1」に変更して保存。GASエディタで関数を手動実行してGmailに発注メールが届くか確認します。</div>
+            <div class="hint hint-ok"><div class="hint-icon">✅</div><div>「発注が必要です」のメールが届けば成功！あとは毎朝8時に自動でチェックしてくれます。</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 第3章 -->
+  <section class="section s3" id="chapter3">
+    <div class="section-header">
+      <div class="section-icon" style="background:#fff8e6;border-color:var(--yellow);">📙</div>
+      <div class="section-meta">
+        <div class="section-label" style="color:#856400;">Chapter 3</div>
+        <div class="section-title">chatGPTで自走する技術<br>エラー対処＋プロンプト応用</div>
+        <div class="section-desc">エラーが出ても怖くない。chatGPTに任せれば解決できます。応用プロンプトも紹介します。</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <div class="flow">
+        <div class="flow-item red">❌ エラーが出た！</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item blue">📋 実行ログの赤い文字をコピー</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item yellow">💬 chatGPTに「このエラーを直して」と貼る</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-item green">✅ 修正コードが出てくる → 貼り直す → 解決！</div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-num" style="background:var(--yellow);border-color:var(--yellow);color:#333;">1</div>
+          <div class="step-content">
+            <div class="step-title">エラーが出たときの対処法</div>
+            <div class="step-desc">赤い文字でエラーが出たら、実行ログの文字をそのままコピーしてchatGPTに貼るだけです。</div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">🔧 エラー対処プロンプト（コピペ用）</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p3e')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p3e">以下のエラーが出ました。原因と修正したコードを教えてください。
+
+（ここにエラーメッセージをそのまま貼る）
+
+使っているコードはこれです：
+
+（ここに現在のコードを貼る）</div>
+            </div>
+            <div class="hint hint-ok"><div class="hint-icon">✅</div><div>エラーメッセージとコードを両方貼るとchatGPTがより正確に修正してくれます。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num" style="background:var(--yellow);border-color:var(--yellow);color:#333;">2</div>
+          <div class="step-content">
+            <div class="step-title">よくあるエラーと対処法</div>
+            <div class="step-desc">よく出るエラーはこれです。慌てなくて大丈夫です。</div>
+            <table class="setting-table">
+              <tr><th>エラー</th><th>原因</th><th>対処法</th></tr>
+              <tr><td class="val">TypeError: Cannot read properties of undefined</td><td>フォームとスプレッドシートが連動していない</td><td>スプレッドシートからGASを開き直す</td></tr>
+              <tr><td class="val">承認が必要です</td><td>Googleの確認画面</td><td>「権限を確認」→「許可」を押す</td></tr>
+              <tr><td class="val">メールが届かない</td><td>トリガー未設定</td><td>トリガーを設定する（時計マーク）</td></tr>
+              <tr><td class="val">関数が見つかりません</td><td>関数名が違う</td><td>chatGPTに「関数名を確認して」と伝える</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num" style="background:var(--yellow);border-color:var(--yellow);color:#333;">3</div>
+          <div class="step-content">
+            <div class="step-title">プロンプトパターン集</div>
+            <div class="step-desc">このパターンを覚えれば、あとは応用するだけです。</div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">📋 基本パターン</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p3a')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p3a">○○したい。△△するGASのコードを書いてください。エラーが起きないようにtry-catchで書いてください。</div>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">📋 条件を加えるパターン</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p3b')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p3b">Googleスプレッドシートの○○列が△△になったとき、□□するGASのコードを書いてください。</div>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">📋 自動実行を加えるパターン</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p3c')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p3c">○○するGASのコードを書いてください。毎朝8時に自動で実行するトリガーの設定方法も教えてください。</div>
+            </div>
+            <div class="prompt-box">
+              <div class="prompt-header">
+                <div class="prompt-tag">📋 メールを送るパターン</div>
+                <button class="copy-btn" onclick="copyPrompt(this, 'p3d')">コピー</button>
+              </div>
+              <div class="prompt-text" id="p3d">○○の条件になったとき、件名「△△」・本文「□□」でGmailを自動送信するGASのコードを書いてください。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num" style="background:var(--yellow);border-color:var(--yellow);color:#333;">4</div>
+          <div class="step-content">
+            <div class="step-title">うまくいかないときのチェックリスト</div>
+            <div class="step-desc">「動かない！」となったときは順番に確認してください。</div>
+            <div class="hint hint-info"><div class="hint-icon">☑️</div><div><strong>チェック1：</strong> コードは保存しましたか？（フロッピーアイコンを押す）</div></div>
+            <div class="hint hint-info"><div class="hint-icon">☑️</div><div><strong>チェック2：</strong> トリガーは設定しましたか？（時計マーク→トリガーを追加）</div></div>
+            <div class="hint hint-info"><div class="hint-icon">☑️</div><div><strong>チェック3：</strong> Googleアカウントの「許可」を押しましたか？</div></div>
+            <div class="hint hint-info"><div class="hint-icon">☑️</div><div><strong>チェック4：</strong> スプレッドシートとフォームは連動していますか？</div></div>
+            <div class="hint hint-info"><div class="hint-icon">☑️</div><div><strong>チェック5：</strong> メールアドレスの列は正しく設定されていますか？</div></div>
+            <div class="hint hint-ok" style="margin-top:12px;"><div class="hint-icon">✅</div><div>それでも動かない場合はエラーメッセージをchatGPTに貼ってください。必ず解決できます。</div></div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num" style="background:var(--yellow);border-color:var(--yellow);color:#333;">5</div>
+          <div class="step-content">
+            <div class="step-title">応用アイデア集</div>
+            <div class="step-desc">この本で覚えた仕組みを応用すると、こんなことができます。chatGPTに頼んでみてください。</div>
+            <table class="setting-table">
+              <tr><th>やりたいこと</th><th>使う仕組み</th></tr>
+              <tr><td>誕生日に自動でメッセージを送る</td><td class="val">スプレッドシート＋GAS（毎日チェック）</td></tr>
+              <tr><td>アンケート結果を自動集計してメールで送る</td><td class="val">フォーム＋GAS</td></tr>
+              <tr><td>スプレッドシートの更新を誰かに知らせる</td><td class="val">GAS（onChange トリガー）</td></tr>
+              <tr><td>定期的にリマインドメールを送る</td><td class="val">GAS（時間主導型トリガー）</td></tr>
+            </table>
+            <div class="hint hint-info"><div class="hint-icon">💡</div><div>「○○したい」とchatGPTに日本語で伝えるだけでコードが出てきます。この本で覚えた手順で貼るだけです。</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="google-bar"></div>
+
+<footer>
+  <div><strong>ぐーたらママでもできた！PTA自動化</strong> 特設サイト</div>
+  <div>書籍は <strong>コミティア2026年6月</strong> にて販売中</div>
+  <div style="margin-top:8px;">著者：若林 朋凜</div>
+</footer>
+
+<script>
+function copyPrompt(btn, id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'コピーしました！';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'コピー';
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
