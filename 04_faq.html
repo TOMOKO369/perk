@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よくある質問 Q&A｜PTA自動化 特典サイト</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:#f5f8ff;color:#333;line-height:1.7}
+header{background:#fff;border-bottom:3px solid #4285f4;padding:14px 20px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(66,133,244,.1)}
+.header-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:13px;font-weight:700;color:#4285f4}
+.back{font-size:12px;color:#999;text-decoration:none;padding:5px 12px;border:1px solid #ddd;border-radius:99px}
+
+/* 変更バナー */
+.change-banner{background:#fff8e6;border-bottom:2px solid #fbbc05;padding:10px 20px;text-align:center;font-size:12px;color:#856400}
+.change-banner strong{font-weight:700}
+
+.hero{background:linear-gradient(135deg,#e8f0fe,#f5f8ff);padding:40px 20px 32px;text-align:center}
+.hero-icon{font-size:40px;margin-bottom:10px}
+.hero h1{font-size:22px;font-weight:900;color:#4285f4;margin-bottom:8px}
+.hero p{font-size:13px;color:#777;max-width:500px;margin:0 auto}
+
+main{max-width:800px;margin:0 auto;padding:32px 20px 60px}
+.section-title{font-size:11px;font-weight:700;color:#4285f4;letter-spacing:.1em;margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid #e8f0fe}
+
+/* アコーディオンQ&A */
+.qa-card{background:#fff;border-radius:14px;margin-bottom:10px;border:1.5px solid #e8f0fe;box-shadow:0 2px 8px rgba(66,133,244,.07);overflow:hidden}
+.qa-q{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none}
+.qa-q:hover{background:#f8faff}
+.q-badge{width:26px;height:26px;border-radius:50%;background:#4285f4;color:#fff;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.q-text{font-size:14px;font-weight:700;flex:1}
+.q-arrow{font-size:12px;color:#aaa;transition:transform .25s;flex-shrink:0}
+.qa-card.open .q-arrow{transform:rotate(180deg)}
+.qa-a{display:none;padding:0 18px 16px 56px;font-size:13px;color:#555;line-height:1.85}
+.qa-card.open .qa-a{display:block}
+.qa-a .hint{background:#e8f0fe;border-radius:8px;padding:10px 14px;color:#1a47ab;margin-top:10px;font-size:12px;display:flex;gap:8px}
+.qa-a .hint.ok{background:#e6f4ea;color:#1a6b3a}
+.qa-a .hint.warn{background:#fff8e6;color:#856400}
+
+/* プロンプトボックス */
+.mini-prompt{background:#1e1e2e;border-radius:10px;overflow:hidden;margin-top:10px}
+.mp-header{display:flex;align-items:center;justify-content:space-between;padding:7px 12px;border-bottom:1px solid rgba(255,255,255,.1)}
+.mp-label{font-size:10px;font-weight:700;color:#fbbc05}
+.mp-copy{font-size:10px;padding:2px 8px;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.6);border-radius:4px;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .15s}
+.mp-copy:hover{background:rgba(255,255,255,.1);color:#fff}
+.mp-copy.done{color:#34a853;border-color:#34a853}
+.mp-text{padding:12px;font-size:11px;line-height:1.8;color:#cdd6f4;white-space:pre-wrap}
+
+/* 全部を検索できるフィルター */
+.search-box{background:#fff;border-radius:10px;border:1.5px solid #e8f0fe;padding:10px 14px;width:100%;font-size:13px;font-family:'Noto Sans JP',sans-serif;margin-bottom:20px;outline:none;color:#333}
+.search-box:focus{border-color:#4285f4}
+
+/* 仕組み早見表 */
+.table-wrap{overflow-x:auto;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:#4285f4;color:#fff;padding:8px 12px;text-align:left;font-weight:700}
+td{padding:8px 12px;border-bottom:1px solid #f0f0f0}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#f8faff}
+
+footer{background:#333;color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:11px}
+footer strong{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">❓ よくある質問 Q&amp;A</div>
+    <a class="back" href="https://tomoko369.github.io/perk/">← ホーム</a>
+  </div>
+</header>
+
+<div class="change-banner">
+  <strong>📢 コンテンツ変更のお知らせ：</strong>活用動画ガイドからよくある質問 Q&amp;Aページに変更しました。よりすぐに役立つ情報をお届けします！
+</div>
+
+<div class="hero">
+  <div class="hero-icon">❓</div>
+  <h1>よくある質問 Q&amp;A</h1>
+  <p>「うまくいかない！」「これどうするの？」を全部まとめました。まずここで探してみてください。</p>
+</div>
+
+<main>
+
+  <input class="search-box" type="text" placeholder="🔍 キーワードで探す（例：メールが届かない、エラー、トリガー…）" oninput="filterQA(this.value)">
+
+  <!-- GAS基本 -->
+  <div class="section-title">⚙️ GAS基本・設定</div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">GASはどこで開けばいいですか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      Googleスプレッドシートを開いて、上のメニューから「拡張機能」→「Apps Script」をクリックすれば開けます。フォームからは開かないようにしてください。
+      <div class="hint">💡 スプレッドシートとフォームを先に連動させてからGASを開くのが正しい順番です。</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">「承認が必要です」と出ました。どうすればいいですか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      怖くないです！Googleが「本当に動かしていいですか？」と確認しているだけです。<br><br>
+      「権限を確認」→ Googleアカウントを選ぶ → 「詳細」→「（安全ではないページ）に移動」→「許可」を押せばOKです。
+      <div class="hint ok">✅ 自分で作ったコードなので安全です。安心して許可を押してください。</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">コードを貼ったのに「function myFunction」が残っています。</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      最初からGASエディタに書いてある「function myFunction() { }」をまず全部消してから、chatGPTのコードを貼ってください。残ったままだとエラーの原因になります。
+      <div class="hint warn">⚠️ 全選択（Ctrl+A）→ Delete で全部消してから貼るのが簡単です。</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">保存の仕方がわかりません。</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      GASエディタの上にあるフロッピーディスクのアイコンをクリックすれば保存できます。または「Ctrl+S」でも保存できます。<br><br>保存しないと変更が反映されないので、コードを貼り付けた後は必ず保存してください。
+    </div>
+  </div>
+
+  <!-- メールが届かない -->
+  <div class="section-title" style="margin-top:32px;">✉️ メールが届かない</div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">フォームを送信したのに自動返信メールが届きません。</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      以下の順番で確認してください。<br><br>
+      ① 迷惑メールフォルダを確認する<br>
+      ② トリガーを設定しましたか？（時計マーク→トリガーを追加→フォーム送信時）<br>
+      ③ Googleアカウントの「許可」を押しましたか？<br>
+      ④ フォームに「メールアドレス」の質問項目がありますか？<br>
+      ⑤ スプレッドシートとフォームを連動させましたか？
+      <div class="hint warn">⚠️ トリガー未設定が原因のことが最も多いです。まずここを確認してください。</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">在庫が2以下なのに発注メールが届きません。</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      以下を確認してください。<br><br>
+      ① トリガーを「時間主導型・毎朝8時」に設定しましたか？<br>
+      ② スプレッドシートのB列に数字（残数）が入っていますか？<br>
+      ③ 手動でテスト実行してみましたか？（▶ボタンを押す）<br>
+      ④ 実行ログにエラーが出ていませんか？
+      <div class="hint">💡 手動でテスト実行してエラーが出たら、そのエラー文をchatGPTに貼ってください。</div>
+    </div>
+  </div>
+
+  <!-- エラー対処 -->
+  <div class="section-title" style="margin-top:32px;">🔴 エラーが出た</div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">「TypeError: Cannot read properties of undefined」が出ました。</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      フォームとスプレッドシートが正しく連動していない可能性があります。<br><br>
+      フォームの「回答」タブ → 緑のスプレッドシートアイコンをクリック → スプレッドシートを作成 → そのスプレッドシートからGASを開き直してください。
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">エラーが出ました。どうすればいいですか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      実行ログに表示された赤いエラー文をそのままコピーして、以下のプロンプトに貼ってchatGPTに送ってください。
+      <div class="mini-prompt">
+        <div class="mp-header">
+          <span class="mp-label">📋 エラー対処プロンプト</span>
+          <button class="mp-copy" onclick="event.stopPropagation();copyMini(this,'ep1')">コピー</button>
+        </div>
+        <div class="mp-text" id="ep1">以下のエラーが出ました。原因と修正したコードを教えてください。
+
+（ここにエラーメッセージをそのまま貼る）
+
+使っているコードはこれです：
+
+（ここに現在のコードを貼る）</div>
+      </div>
+      <div class="hint ok">✅ エラーはバグではなく「ここを直して」というメッセージです。chatGPTに貼ればほぼ100%解決します。</div>
+    </div>
+  </div>
+
+  <!-- トリガー -->
+  <div class="section-title" style="margin-top:32px;">⏰ トリガー設定</div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">トリガーはどこで設定すればいいですか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      GASエディタの左サイドバーにある時計のアイコン（⏰）をクリック → 「トリガーを追加」で設定できます。<br><br>
+      <div class="table-wrap"><table>
+        <tr><th>第1章（自動返信）</th><th>第2章（在庫チェック）</th></tr>
+        <tr><td>イベントのソース：スプレッドシートから<br>イベントの種類：フォーム送信時</td><td>イベントのソース：時間主導型<br>タイプ：日付ベース<br>時刻：午前8時〜9時</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">トリガーを設定したはずなのに動きません。</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      以下を確認してください。<br><br>
+      ① トリガー設定後にGoogleアカウントの「許可」を押しましたか？<br>
+      ② コードは保存しましたか？<br>
+      ③ 関数名がコードと一致していますか？（例：onFormSubmit）<br><br>
+      それでも動かない場合は、トリガーを一度削除して作り直してみてください。
+    </div>
+  </div>
+
+  <!-- 個人情報 -->
+  <div class="section-title" style="margin-top:32px;">🔒 個人情報・セキュリティ</div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">chatGPTに個人情報を貼り付けても大丈夫ですか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      貼り付けないでください。コードを作ってもらうときは必ずダミーデータ（架空の名前や数字）を使ってください。<br><br>「○○さんのデータ」ではなく「田中太郎という名前で動作確認したい」という形で伝えるのが正しい使い方です。
+      <div class="hint warn">⚠️ 実際の名前・住所・電話番号・メールアドレスは貼らないようにしましょう。</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">スプレッドシートの名簿を誤って全員に共有してしまいました。</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      すぐにスプレッドシートの「共有」設定を開いて、「リンクを知っている全員が閲覧可能」になっている場合は「特定のユーザーのみ」に変更してください。<br><br>
+      設定変更後、関係者にお詫びの連絡を入れることをおすすめします。
+      <div class="hint ok">✅ 今後は共有ボタンを押す前に必ず設定を確認する習慣をつけましょう。</div>
+    </div>
+  </div>
+
+  <!-- その他 -->
+  <div class="section-title" style="margin-top:32px;">💬 その他</div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">GASは無料で使えますか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      はい、Googleアカウントがあれば無料で使えます。インストールも不要です。GmailやGoogleスプレッドシートと同じGoogleのサービスなので、追加費用はかかりません。
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">プログラミングの知識がなくてもできますか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      できます！この本の著者もプログラミング知識ゼロからスタートしました。コードの意味を理解する必要はありません。chatGPTにお願いしてコードを作ってもらって、GASに貼るだけでOKです。
+      <div class="hint ok">✅ 逆切れしながらでも大丈夫。著者もそうでした！</div>
+    </div>
+  </div>
+
+  <div class="qa-card" onclick="toggleQA(this)">
+    <div class="qa-q">
+      <div class="q-badge">Q</div>
+      <div class="q-text">それでも解決しない場合はどうすればいいですか？</div>
+      <div class="q-arrow">▼</div>
+    </div>
+    <div class="qa-a">
+      専用のchatGPTに状況を説明してみてください。エラーメッセージ・現在のコード・やりたいことを一緒に伝えると解決しやすいです。<br><br>
+      <a href="https://chat.openai.com" target="_blank" style="color:#4285f4;font-weight:700">🤖 専用chatGPTを開く →</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <strong>ぐーたらママでもできた！PTA自動化</strong> 特典サイト<br>
+  著者：若林 朋凜
+</footer>
+
+<script>
+function toggleQA(card) {
+  card.classList.toggle('open');
+}
+function filterQA(keyword) {
+  const cards = document.querySelectorAll('.qa-card');
+  const kw = keyword.trim().toLowerCase();
+  cards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    card.style.display = (!kw || text.includes(kw)) ? '' : 'none';
+  });
+}
+function copyMini(btn, id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'コピーしました！';
+    btn.classList.add('done');
+    setTimeout(() => {
+      btn.textContent = 'コピー';
+      btn.classList.remove('done');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>
