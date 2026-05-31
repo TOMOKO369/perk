@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作業効率化ツール｜PTA自動化 特典サイト</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans JP',sans-serif;background:#fffdf0;color:#333;line-height:1.7}
+header{background:#fff;border-bottom:3px solid #fbbc05;padding:14px 20px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(251,188,5,.1)}
+.header-inner{max-width:800px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:13px;font-weight:700;color:#f59e0b}
+.back{font-size:12px;color:#999;text-decoration:none;padding:5px 12px;border:1px solid #ddd;border-radius:99px}
+.hero{background:linear-gradient(135deg,#fff8d6,#fffdf0);padding:40px 20px 32px;text-align:center}
+.hero-icon{font-size:40px;margin-bottom:10px}
+.hero h1{font-size:22px;font-weight:900;color:#f59e0b;margin-bottom:8px}
+.hero p{font-size:13px;color:#777;max-width:480px;margin:0 auto}
+main{max-width:800px;margin:0 auto;padding:32px 20px 60px}
+.section-title{font-size:11px;font-weight:700;color:#f59e0b;letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;padding-bottom:6px;border-bottom:2px solid #fff3cc}
+.tool-card{background:#fff;border-radius:14px;padding:20px;margin-bottom:16px;border:1.5px solid #fff3cc;box-shadow:0 2px 10px rgba(251,188,5,.1)}
+.tool-card h3{font-size:15px;font-weight:900;color:#333;margin-bottom:4px}
+.tool-card .tag{display:inline-block;background:#fff3cc;color:#f59e0b;font-size:10px;font-weight:700;padding:2px 10px;border-radius:99px;margin-bottom:12px}
+.tool-card p{font-size:13px;color:#555;margin-bottom:12px}
+.link-btn{display:inline-block;padding:10px 20px;background:#fbbc05;color:#333;font-size:13px;font-weight:700;border-radius:10px;text-decoration:none;transition:opacity .15s}
+.link-btn:hover{opacity:.85}
+.prompt-box{background:#1e1e2e;border-radius:10px;overflow:hidden;margin:12px 0}
+.prompt-header{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid rgba(255,255,255,.1)}
+.prompt-tag{font-size:11px;font-weight:700;color:#fbbc05}
+.copy-btn{font-size:11px;padding:3px 10px;border-radius:4px;border:1px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.6);cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .15s}
+.copy-btn:hover{background:rgba(255,255,255,.1);color:#fff}
+.copy-btn.done{color:#34a853;border-color:#34a853}
+.prompt-text{padding:14px;font-size:12px;line-height:1.85;color:#cdd6f4;white-space:pre-wrap}
+.step-list{list-style:none;margin:10px 0}
+.step-list li{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;font-size:13px}
+.step-num{width:24px;height:24px;border-radius:50%;background:#fbbc05;color:#333;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+footer{background:#333;color:rgba(255,255,255,.6);text-align:center;padding:24px;font-size:11px}
+footer strong{color:#fff}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">🔧 作業効率化ツール</div>
+    <a class="back" href="https://tomoko369.github.io/perk/">← ホーム</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-icon">🔧</div>
+  <h1>作業効率化ツール</h1>
+  <p>chatGPTに貼るだけでGASコードが作れるプロンプトと、すぐ使えるGoogle系ツールのリンク集です。</p>
+</div>
+
+<main>
+
+  <div class="section-title">🤖 GASコード自動作成プロンプト</div>
+
+  <div class="tool-card">
+    <h3>申し込みフォーム自動返信メール</h3>
+    <span class="tag">第1章で使うやつ</span>
+    <p>以下のプロンプトをchatGPTにそのままコピペして送ってください。GASのコードが出てきます。</p>
+    <div class="prompt-box">
+      <div class="prompt-header">
+        <span class="prompt-tag">📋 chatGPTに貼るプロンプト</span>
+        <button class="copy-btn" onclick="copyPrompt(this,'p1')">コピー</button>
+      </div>
+      <div class="prompt-text" id="p1">Googleフォームに回答が送信されたとき、回答者のメールアドレスに自動でGmailを送るGASのコードを書いてください。
+
+件名：「申し込みありがとうございます」
+本文：「この度はお申し込みいただきありがとうございます。内容を確認のうえ、改めてご連絡させていただきます。今しばらくお待ちくださいませ。」
+
+回答者の名前も取得してメールに入れてください。エラーが起きないようにtry-catchで書いてください。トリガーはフォーム送信時に設定する手順も教えてください。</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <h3>在庫管理・自動発注メール</h3>
+    <span class="tag">第2章で使うやつ</span>
+    <p>備品の在庫が2個以下になったら自動でメールが飛ぶ仕組みです。</p>
+    <div class="prompt-box">
+      <div class="prompt-header">
+        <span class="prompt-tag">📋 chatGPTに貼るプロンプト</span>
+        <button class="copy-btn" onclick="copyPrompt(this,'p2')">コピー</button>
+      </div>
+      <div class="prompt-text" id="p2">Googleスプレッドシートで在庫を管理しています。
+
+スプレッドシートの構成：
+- A列：品目名
+- B列：残数（数字）
+
+B列の残数が2以下になったとき、A列の品目名を件名に入れて「発注をお願いします」という内容でGmailを自動送信するGASのコードを書いてください。
+
+毎朝8時に自動でチェックするトリガーの設定方法も教えてください。エラーが起きないようにtry-catchで書いてください。</div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <h3>エラーが出たときのプロンプト</h3>
+    <span class="tag">第3章で使うやつ</span>
+    <p>赤いエラーが出たらこのプロンプトにエラー文をコピペして送るだけです。</p>
+    <div class="prompt-box">
+      <div class="prompt-header">
+        <span class="prompt-tag">🔧 エラー対処プロンプト</span>
+        <button class="copy-btn" onclick="copyPrompt(this,'p3')">コピー</button>
+      </div>
+      <div class="prompt-text" id="p3">以下のエラーが出ました。原因と修正したコードを教えてください。
+
+（ここにエラーメッセージをそのまま貼る）
+
+使っているコードはこれです：
+
+（ここに現在のコードを貼る）</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="margin-top:32px;">🔗 すぐ使えるGoogleツールリンク集</div>
+
+  <div class="tool-card">
+    <h3>Googleフォームを新規作成する</h3>
+    <span class="tag">出欠・申し込みフォームを作るとき</span>
+    <ul class="step-list">
+      <li><div class="step-num">1</div><div>下のボタンをクリックしてGoogleフォームを開く</div></li>
+      <li><div class="step-num">2</div><div>「空白のフォーム」を選んで作成スタート</div></li>
+      <li><div class="step-num">3</div><div>タイトル・質問を入力して完成！</div></li>
+    </ul>
+    <a class="link-btn" href="https://docs.google.com/forms/create" target="_blank">📝 Googleフォームを開く</a>
+  </div>
+
+  <div class="tool-card">
+    <h3>Googleスプレッドシートを新規作成する</h3>
+    <span class="tag">在庫管理・名簿作成に</span>
+    <ul class="step-list">
+      <li><div class="step-num">1</div><div>下のボタンをクリックしてスプレッドシートを開く</div></li>
+      <li><div class="step-num">2</div><div>A列・B列に品目名と残数を入力する</div></li>
+      <li><div class="step-num">3</div><div>「拡張機能」→「Apps Script」でGASを設定する</div></li>
+    </ul>
+    <a class="link-btn" href="https://docs.google.com/spreadsheets/create" target="_blank">📊 スプレッドシートを開く</a>
+  </div>
+
+  <div class="tool-card">
+    <h3>chatGPTを開く</h3>
+    <span class="tag">GASコードを作るとき</span>
+    <p>上のプロンプトをコピーしてchatGPTに貼るだけでコードが出てきます。</p>
+    <a class="link-btn" href="https://chat.openai.com" target="_blank">🤖 chatGPTを開く</a>
+  </div>
+
+</main>
+
+<footer>
+  <strong>ぐーたらママでもできた！PTA自動化</strong> 特典サイト<br>
+  著者：若林 朋凜
+</footer>
+
+<script>
+function copyPrompt(btn, id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'コピーしました！';
+    btn.classList.add('done');
+    setTimeout(() => {
+      btn.textContent = 'コピー';
+      btn.classList.remove('done');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>
