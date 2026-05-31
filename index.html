@@ -147,155 +147,6 @@
 <div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-20">
 <div class="flex items-center gap-4">
 <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden text-white">
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>書籍特典WEBサイト メニュー</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-error": "#ffffff",
-                    "surface-tint": "#ba104a",
-                    "surface-container-lowest": "#ffffff",
-                    "pastel-purple": "#CDB4DB",
-                    "secondary-fixed-dim": "#e8c426",
-                    "surface-bright": "#fbf9f8",
-                    "surface-container-low": "#f6f3f2",
-                    "pastel-blue": "#A2D2FF",
-                    "on-primary-container": "#fffbff",
-                    "on-secondary-fixed": "#221b00",
-                    "tertiary-fixed": "#96f89f",
-                    "outline": "#8e6f73",
-                    "on-primary": "#ffffff",
-                    "surface-container": "#f0eded",
-                    "on-tertiary": "#ffffff",
-                    "on-surface": "#1b1c1c",
-                    "secondary-container": "#fdd73b",
-                    "inverse-primary": "#ffb2bd",
-                    "on-tertiary-fixed": "#002107",
-                    "inverse-on-surface": "#f3f0f0",
-                    "secondary-fixed": "#ffe173",
-                    "on-primary-fixed-variant": "#900036",
-                    "inverse-surface": "#303030",
-                    "tertiary-container": "#21863b",
-                    "on-background": "#1b1c1c",
-                    "surface-container-highest": "#e4e2e1",
-                    "background": "#fbf9f8",
-                    "error-container": "#ffdad6",
-                    "on-tertiary-container": "#f7fff2",
-                    "on-secondary-container": "#715d00",
-                    "on-tertiary-fixed-variant": "#00531d",
-                    "tertiary-fixed-dim": "#7bdb85",
-                    "surface-dim": "#dcd9d9",
-                    "on-primary-fixed": "#400013",
-                    "primary-container": "#d92f5f",
-                    "surface-soft": "#FFF9FA",
-                    "primary-fixed": "#ffd9dd",
-                    "surface-variant": "#e4e2e1",
-                    "status-error": "#EA4335",
-                    "surface": "#fbf9f8",
-                    "on-error-container": "#93000a",
-                    "primary-fixed-dim": "#ffb2bd",
-                    "on-surface-variant": "#5a4043",
-                    "tertiary": "#006b28",
-                    "error": "#ba1a1a",
-                    "on-secondary-fixed-variant": "#554500",
-                    "secondary": "#705d00",
-                    "primary": "#b60b47",
-                    "surface-container-high": "#eae8e7",
-                    "on-secondary": "#ffffff",
-                    "outline-variant": "#e2bec1"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "margin-desktop": "40px",
-                    "container-max": "1200px",
-                    "base": "8px",
-                    "margin-mobile": "16px",
-                    "gutter": "24px"
-            },
-            "fontFamily": {
-                    "headline-lg-mobile": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
-                    "label-md": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"],
-                    "label-sm": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"],
-                    "body-lg": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"],
-                    "headline-md": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
-                    "headline-lg": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
-                    "headline-xl": ["Plus Jakarta Sans", "Noto Sans JP", "sans-serif"],
-                    "body-md": ["Be Vietnam Pro", "Noto Sans JP", "sans-serif"]
-            },
-            "fontSize": {
-                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "700"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
-                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
-        
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
-        }
-        .header-accent {
-            position: relative;
-        }
-        .header-accent::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            border-radius: 4px 4px 0 0;
-        }
-        .header-accent-pink::before { background-color: #FF4D79; }
-        .header-accent-yellow::before { background-color: #ffe173; }
-        .header-accent-green::before { background-color: #7bdb85; }
-        
-        .soft-glow {
-            box-shadow: 0 20px 40px -10px rgba(186,16,74,0.08);
-        }
-        .squishy:hover {
-            transform: scale(0.98);
-            transition: transform 0.2s ease-in-out;
-        }
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-surface-soft text-on-surface font-body-md selection:bg-primary-fixed">
-<!-- TopAppBar Navigation -->
-<header class="w-full top-0 sticky z-50 bg-surface-soft dark:bg-surface-dim shadow-[0_10px_30px_-15px_rgba(186,16,74,0.08)]">
-<div class="max-w-container-max mx-auto px-margin-desktop flex items-center justify-between h-20">
-<div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center overflow-hidden text-white">
 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
 </svg>
@@ -304,7 +155,6 @@
 </div>
 <nav class="hidden md:flex items-center gap-8">
 <a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary" href="#">ホーム</a>
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary transition-transform duration-200 hover:scale-98" href="./guide_page.html">使い方ガイド</a>
 <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:scale-98 transition-transform">お問い合わせ</button>
 </nav>
 <div class="md:hidden">
@@ -338,9 +188,6 @@
                         このサイトでは、本を読んでくださった方限定の特典コンテンツをご利用いただけます。
                     </p>
 <div class="flex flex-col sm:flex-row gap-4">
-<button onclick="window.location.href='./guide_page.html'" class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-lg squishy soft-glow">
-                            使い方ガイドへ
-                        </button>
 </div>
 </div>
 <div class="order-1 md:order-2 flex justify-center relative">
@@ -443,11 +290,8 @@
 <div class="absolute top-0 right-0 w-32 h-32 bg-secondary-fixed opacity-20 -rotate-12 translate-x-8 -translate-y-8 rounded-2xl"></div>
 <h3 class="font-headline-lg text-headline-lg text-on-surface mb-6 relative z-10">はじめにお読みください</h3>
 <p class="font-body-md text-body-md text-on-surface-variant mb-10 max-w-2xl mx-auto relative z-10">
-                初めての方は、使い方ガイドをご覧ください。
+                初めての方はお問い合わせよりご連絡ください。
             </p>
-<button onclick="window.location.href='./guide_page.html'" class="bg-primary text-on-primary px-12 py-4 rounded-xl font-headline-md squishy soft-glow relative z-10">
-                使い方ガイドへ
-            </button>
 </section>
 </main>
 <!-- Footer -->
@@ -459,7 +303,6 @@
 </div>
 <div class="flex flex-wrap justify-center gap-8 mb-8 md:mb-0">
 <a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">ホーム</a>
-<a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="./guide_page.html">使い方ガイド</a>
 <a class="text-on-surface-variant hover:text-primary-container transition-colors font-body-md" href="#">お問い合わせ</a>
 </div>
 <div class="text-on-surface-variant font-label-sm">
@@ -472,10 +315,6 @@
 <div class="flex flex-col items-center gap-1 text-primary">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
 <span class="text-[10px] font-bold">ホーム</span>
-</div>
-<div onclick="window.location.href='./guide_page.html'" class="flex flex-col items-center gap-1 text-on-surface-variant cursor-pointer">
-<span class="material-symbols-outlined">auto_fix</span>
-<span class="text-[10px]">使い方ガイド</span>
 </div>
 <div class="flex flex-col items-center gap-1 text-on-surface-variant">
 <span class="material-symbols-outlined">person</span>
